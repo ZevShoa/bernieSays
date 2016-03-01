@@ -21,6 +21,7 @@ namespace bernieSays
 
         private void exitButton_Click(object sender, EventArgs e)
         {
+            // if you want to exit it takes you back to the start screen
             Form f = this.FindForm();
             f.Controls.Remove(this);
 
@@ -30,6 +31,7 @@ namespace bernieSays
 
         private void endScreen_Load(object sender, EventArgs e)
         {
+            //shows how far you got 
             patternCount = playScreen.pattern.Count;
             patternLabel.Text = "You got to " + Convert.ToString(patternCount);
         }

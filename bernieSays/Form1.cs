@@ -12,6 +12,7 @@ namespace bernieSays
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace bernieSays
       
         private void Form1_Load(object sender, EventArgs e)
         {
+            //goes to start screen
             startScreen ss = new startScreen();
             this.Controls.Add(ss);
         }

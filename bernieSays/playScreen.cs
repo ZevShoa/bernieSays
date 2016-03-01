@@ -14,11 +14,13 @@ namespace bernieSays
 {
     public partial class playScreen : UserControl
     {
+        // created all my variables
         int listNum = 0;
         int randNum;
         int patternNum = -1;
         int patternSpot =0 ;
-       public static List<int> pattern = new List<int>();
+        //The only thing I needed public was my list
+        public static List<int> pattern = new List<int>();
         SoundPlayer player = new SoundPlayer(Properties.Resources.bing);
 
         Random choose = new Random();
@@ -29,6 +31,7 @@ namespace bernieSays
          
         private void playScreen_Load(object sender, EventArgs e)
         {
+            //clear the pattern to start the new game
             pattern.Clear();
             Refresh();
             Thread.Sleep(500);
@@ -36,6 +39,7 @@ namespace bernieSays
         }
         public void computerTurn()
         {
+            //all this is the computer clicking the buttons
             patternSpot = 0;
             patternNum++;
             randNum = choose.Next(0, 4);
@@ -46,7 +50,7 @@ namespace bernieSays
             {
                 if (pattern[i] == 0)
                 {
-                  //  buttonChoose0.PerformClick();
+                  
                     buttonChoose0.BackgroundImage = Properties.Resources.bernie0;
                     buttonChoose0.Text = "";
                     player.Play();
@@ -60,7 +64,7 @@ namespace bernieSays
                 }
                 else if (pattern[i] == 1)
                 {
-                   // buttonChoose1.PerformClick();
+                   
                     buttonChoose1.BackgroundImage = Properties.Resources.bernie1;
                     buttonChoose1.Text = "";
                     player.Play();
@@ -74,7 +78,7 @@ namespace bernieSays
                 }
                 else if (pattern[i] == 2)
                 {
-                  //  buttonChoose2.PerformClick();
+              
                     buttonChoose2.BackgroundImage = Properties.Resources.bernie2;
                     buttonChoose2.Text = "";
                     player.Play();
@@ -87,7 +91,7 @@ namespace bernieSays
                 }
                 else if (pattern[i] == 3)
                 {
-                   // buttonChoose3.PerformClick();
+               
                     buttonChoose3.BackgroundImage = Properties.Resources.bernie3;
                     buttonChoose3.Text = "";
                     player.Play();
@@ -100,13 +104,14 @@ namespace bernieSays
                 }
 
             }
-            
+            //resests the random number for next time
             randNum = 0;
 
         }
 
         private void buttonChoose0_Click(object sender, EventArgs e)
         {
+            // when the user chooses one of the buttons this sees if it is the right button
             if (pattern[patternSpot] == 0)
             {
                 player.Play();
@@ -135,6 +140,7 @@ namespace bernieSays
 
         private void buttonChoose1_Click(object sender, EventArgs e)
         {
+            // when the user chooses one of the buttons this sees if it is the right button
             if (pattern[patternSpot] == 1)
             {
                 player.Play();
@@ -164,6 +170,7 @@ namespace bernieSays
 
         private void buttonChoose2_Click(object sender, EventArgs e)
         {
+            // when the user chooses one of the buttons this sees if it is the right button
             if (pattern[patternSpot] == 2)
             {
                 player.Play();  
@@ -192,6 +199,7 @@ namespace bernieSays
 
         private void buttonChoose3_Click(object sender, EventArgs e)
         {
+            // when the user chooses one of the buttons this sees if it is the right button
             if (pattern [patternSpot] == 3)
             {
                 player.Play();
