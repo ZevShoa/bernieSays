@@ -25,5 +25,10 @@ namespace bernieSays
             playScreen ps = new playScreen();
             f.Controls.Add(ps);
         }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="endScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="endScreen.Designer.cs">
+      <DependentUpon>endScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="startScreen.Designer.cs">
       <DependentUpon>startScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="endScreen.resx">
+      <DependentUpon>endScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +121,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bernie3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Robot_blip-Marianne_Gagnon-120342607.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadBernie.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

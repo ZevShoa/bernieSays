@@ -97,6 +97,7 @@
             this.Controls.Add(this.buttonChoose1);
             this.Controls.Add(this.buttonChoose0);
             this.Controls.Add(this.buttonChoose2);
+            this.DoubleBuffered = true;
             this.Name = "playScreen";
             this.Size = new System.Drawing.Size(600, 600);
             this.Load += new System.EventHandler(this.playScreen_Load);

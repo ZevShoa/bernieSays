@@ -39,12 +39,13 @@
             this.playButton.BackColor = System.Drawing.Color.Transparent;
             this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.playButton.Font = new System.Drawing.Font("Castellar", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playButton.Location = new System.Drawing.Point(171, 434);
+            this.playButton.Location = new System.Drawing.Point(368, 424);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(198, 116);
             this.playButton.TabIndex = 3;
-            this.playButton.Text = "Play";
+            this.playButton.Text = "Exit";
             this.playButton.UseVisualStyleBackColor = false;
+            this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
             // bernieLabel
             // 
@@ -63,7 +64,7 @@
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Castellar", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(171, 431);
+            this.button1.Location = new System.Drawing.Point(39, 424);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(198, 116);
             this.button1.TabIndex = 5;
