@@ -130,6 +130,8 @@ namespace bernieSays
             }
             else
             {
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loose);
+                player.Play();
                 Form f = this.FindForm();
                 f.Controls.Remove(this);
 
@@ -159,6 +161,9 @@ namespace bernieSays
             }
             else
             {
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loose);
+                player.Play();
+
                 Form f = this.FindForm();
                 f.Controls.Remove(this);
 
@@ -189,6 +194,8 @@ namespace bernieSays
             }
             else
             {
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loose);
+                player.Play();
                 Form f = this.FindForm();
                 f.Controls.Remove(this);
 
@@ -218,7 +225,9 @@ namespace bernieSays
             }
             else
             {
-                 Form f = this.FindForm();
+                SoundPlayer player = new SoundPlayer(Properties.Resources.loose);
+                player.Play();
+                Form f = this.FindForm();
                 f.Controls.Remove(this);
 
                 endScreen es = new endScreen();
