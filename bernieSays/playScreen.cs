@@ -1,4 +1,9 @@
-﻿using System;
+﻿///Zev Shoag 
+/// March 7th
+/// A Simon says game based around Bernie Sanders
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -57,7 +62,7 @@ namespace bernieSays
                     Refresh();
                     Thread.Sleep(1000);
                     buttonChoose0.BackgroundImage = null;
-                    buttonChoose0.Text = "Save the Enviroment";
+                    buttonChoose0.Text = "Save the Environment";
                     Thread.Sleep(500);
 
                     Refresh();
@@ -104,7 +109,7 @@ namespace bernieSays
                 }
 
             }
-            //resests the random number for next time
+            //resets the random number for next time
             randNum = 0;
 
         }
@@ -120,7 +125,7 @@ namespace bernieSays
                 Refresh();
                 Thread.Sleep(1000);
                 buttonChoose0.BackgroundImage = null;
-                buttonChoose0.Text = "Save the Enviroment";
+                buttonChoose0.Text = "Save the Environment";
                 patternSpot++;
                 
                 if (patternSpot == pattern.Count)
@@ -206,6 +211,7 @@ namespace bernieSays
 
         private void buttonChoose3_Click(object sender, EventArgs e)
         {
+            
             // when the user chooses one of the buttons this sees if it is the right button
             if (pattern [patternSpot] == 3)
             {
