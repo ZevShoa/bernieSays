@@ -24,23 +24,40 @@ namespace bernieSays
         int randNum;
         int patternNum = -1;
         int patternSpot =0 ;
+        int buttonWhere;
         //The only thing I needed public was my list
         public static List<int> pattern = new List<int>();
+        Button[] buttons = new Button[4];
+
+        Image[] bernies = { Properties.Resources.bernie0, Properties.Resources.bernie1, 
+        Properties.Resources.bernie2,Properties.Resources.bernie3};
+        string[] phrases = { "Save the Environment!", "Fight Against the Richest One Percent!",
+         "Socialized Medicare!","Save the Environment!"};
+
         SoundPlayer player = new SoundPlayer(Properties.Resources.bing);
 
         Random choose = new Random();
         public playScreen()
         {
+            buttons[0] = buttonChoose0;
             InitializeComponent();
+            
         }
          
         private void playScreen_Load(object sender, EventArgs e)
         {
+            //adds the buttons to the list
+            buttons[0] = buttonChoose0;
+            buttons[1] = buttonChoose1;
+            buttons[2] = buttonChoose2;
+            buttons[3] = buttonChoose3;
             //clear the pattern to start the new game
             pattern.Clear();
             Refresh();
             Thread.Sleep(500);
             computerTurn();
+            
+
         }
         public void computerTurn()
         {
@@ -113,9 +130,15 @@ namespace bernieSays
             randNum = 0;
 
         }
+        public void buttonsClicks()
+        {
+           
+            
+        }
 
         private void buttonChoose0_Click(object sender, EventArgs e)
         {
+           
             // when the user chooses one of the buttons this sees if it is the right button
             if (pattern[patternSpot] == 0)
             {
