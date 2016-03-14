@@ -24,15 +24,15 @@ namespace bernieSays
         int randNum;
         int patternNum = -1;
         int patternSpot =0 ;
-        int buttonWhere;
+       
         //The only thing I needed public was my list
         public static List<int> pattern = new List<int>();
         Button[] buttons = new Button[4];
-
+        
         Image[] bernies = { Properties.Resources.bernie0, Properties.Resources.bernie1, 
         Properties.Resources.bernie2,Properties.Resources.bernie3};
         string[] phrases = { "Save the Environment!", "Fight Against the Richest One Percent!",
-         "Socialized Medicare!","Save the Environment!"};
+         "Socialized Medicare!","Social Justice!"};
 
         SoundPlayer player = new SoundPlayer(Properties.Resources.bing);
 
@@ -132,8 +132,32 @@ namespace bernieSays
         }
         public void buttonsClicks()
         {
-           
-            
+
+            for (int i = 0; i < pattern.Count; i++)
+            {
+
+                player.Play();
+                buttons[pattern[i]].BackgroundImage = bernies[pattern[i]];
+                buttons[pattern[i]].Text = "";
+                Refresh();
+                Thread.Sleep(1000);
+                buttons[pattern[i]].BackgroundImage = null;
+                buttons[pattern[i]].Text = phrases[pattern[i]];
+                
+            }
+            patternSpot++;
+
+        }
+        public void loose()
+        {
+            SoundPlayer player = new SoundPlayer(Properties.Resources.loose);
+            player.Play();
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+
+            endScreen es = new endScreen();
+            f.Controls.Add(es);
+
         }
 
         private void buttonChoose0_Click(object sender, EventArgs e)
@@ -142,14 +166,15 @@ namespace bernieSays
             // when the user chooses one of the buttons this sees if it is the right button
             if (pattern[patternSpot] == 0)
             {
-                player.Play();
-                buttonChoose0.BackgroundImage = Properties.Resources.bernie0;
-                buttonChoose0.Text = "";
-                Refresh();
-                Thread.Sleep(1000);
-                buttonChoose0.BackgroundImage = null;
-                buttonChoose0.Text = "Save the Environment";
-                patternSpot++;
+                buttonsClicks();             
+                //player.Play();
+                //buttonChoose0.BackgroundImage = Properties.Resources.bernie0;
+                //buttonChoose0.Text = "";
+                //Refresh();
+                //Thread.Sleep(1000);
+                //buttonChoose0.BackgroundImage = null;
+                //buttonChoose0.Text = "Save the Environment";
+                //patternSpot++;
                 
                 if (patternSpot == pattern.Count)
                 {
@@ -158,13 +183,14 @@ namespace bernieSays
             }
             else
             {
-                SoundPlayer player = new SoundPlayer(Properties.Resources.loose);
-                player.Play();
-                Form f = this.FindForm();
-                f.Controls.Remove(this);
+                loose();
+                //SoundPlayer player = new SoundPlayer(Properties.Resources.loose);
+                //player.Play();
+                //Form f = this.FindForm();
+                //f.Controls.Remove(this);
 
-                endScreen es = new endScreen();
-                f.Controls.Add(es);
+                //endScreen es = new endScreen();
+                //f.Controls.Add(es);
             }
         }
 
@@ -173,14 +199,15 @@ namespace bernieSays
             // when the user chooses one of the buttons this sees if it is the right button
             if (pattern[patternSpot] == 1)
             {
-                player.Play();
-                buttonChoose1.BackgroundImage = Properties.Resources.bernie1;
-                buttonChoose1.Text = "";
-                Refresh();
-                Thread.Sleep(1000);
-                buttonChoose1.BackgroundImage = null;
-                buttonChoose1.Text = "Fight Against the Richest One Percent";
-                patternSpot++;
+                buttonsClicks();
+                //player.Play();
+                //buttonChoose1.BackgroundImage = Properties.Resources.bernie1;
+                //buttonChoose1.Text = "";
+                //Refresh();
+                //Thread.Sleep(1000);
+                //buttonChoose1.BackgroundImage = null;
+                //buttonChoose1.Text = "Fight Against the Richest One Percent";
+                //patternSpot++;
            
                 if (patternSpot == pattern.Count)
                 {
@@ -189,14 +216,15 @@ namespace bernieSays
             }
             else
             {
-                SoundPlayer player = new SoundPlayer(Properties.Resources.loose);
-                player.Play();
+                loose();
+                //SoundPlayer player = new SoundPlayer(Properties.Resources.loose);
+                //player.Play();
 
-                Form f = this.FindForm();
-                f.Controls.Remove(this);
+                //Form f = this.FindForm();
+                //f.Controls.Remove(this);
 
-                endScreen es = new endScreen();
-                f.Controls.Add(es);
+                //endScreen es = new endScreen();
+                //f.Controls.Add(es);
             }
 
         }
@@ -206,14 +234,15 @@ namespace bernieSays
             // when the user chooses one of the buttons this sees if it is the right button
             if (pattern[patternSpot] == 2)
             {
-                player.Play();  
-                buttonChoose2.BackgroundImage = Properties.Resources.bernie2;
-                buttonChoose2.Text = "";
-                Refresh();
-                Thread.Sleep(1000);
-                buttonChoose2.BackgroundImage = null;
-                buttonChoose2.Text = "Socialized Medicare";
-                patternSpot++;
+                buttonsClicks();
+                //player.Play();  
+                //buttonChoose2.BackgroundImage = Properties.Resources.bernie2;
+                //buttonChoose2.Text = "";
+                //Refresh();
+                //Thread.Sleep(1000);
+                //buttonChoose2.BackgroundImage = null;
+                //buttonChoose2.Text = "Socialized Medicare";
+                //patternSpot++;
                 
                 if (patternSpot == pattern.Count)
                 {
@@ -222,13 +251,14 @@ namespace bernieSays
             }
             else
             {
-                SoundPlayer player = new SoundPlayer(Properties.Resources.loose);
-                player.Play();
-                Form f = this.FindForm();
-                f.Controls.Remove(this);
+                loose();
+               // SoundPlayer player = new SoundPlayer(Properties.Resources.loose);
+               // player.Play();
+               // Form f = this.FindForm();
+               // f.Controls.Remove(this);
 
-               endScreen es = new endScreen();
-                f.Controls.Add(es);
+               //endScreen es = new endScreen();
+               // f.Controls.Add(es);
             }
         }
 
@@ -238,14 +268,15 @@ namespace bernieSays
             // when the user chooses one of the buttons this sees if it is the right button
             if (pattern [patternSpot] == 3)
             {
-                player.Play();
-                buttonChoose3.BackgroundImage = Properties.Resources.bernie3;
-                buttonChoose3.Text = "";
-                Refresh();
-                Thread.Sleep(1000);
-                buttonChoose3.BackgroundImage = null;
-                buttonChoose3.Text = "Social Justice";
-                patternSpot++;
+                buttonsClicks();
+                //player.Play();
+                //buttonChoose3.BackgroundImage = Properties.Resources.bernie3;
+                //buttonChoose3.Text = "";
+                //Refresh();
+                //Thread.Sleep(1000);
+                //buttonChoose3.BackgroundImage = null;
+                //buttonChoose3.Text = "Social Justice";
+                //patternSpot++;
                
                 if (patternSpot == pattern.Count)
                 {
@@ -254,13 +285,14 @@ namespace bernieSays
             }
             else
             {
-                SoundPlayer player = new SoundPlayer(Properties.Resources.loose);
-                player.Play();
-                Form f = this.FindForm();
-                f.Controls.Remove(this);
+                loose();
+                //SoundPlayer player = new SoundPlayer(Properties.Resources.loose);
+                //player.Play();
+                //Form f = this.FindForm();
+                //f.Controls.Remove(this);
 
-                endScreen es = new endScreen();
-                f.Controls.Add(es);
+                //endScreen es = new endScreen();
+                //f.Controls.Add(es);
             }
         }
     }
